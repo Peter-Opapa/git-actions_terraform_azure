@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-azureterraform",
+        "ms-vscode.azure-account",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "redhat.vscode-yaml",
+        "ms-vscode.vscode-json",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ms-vscode.powershell"
+    ]
+}

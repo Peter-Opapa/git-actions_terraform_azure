@@ -1,0 +1,102 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars.backup
+.terraform/
+.terraform.lock.hcl
+*/*/.terraform/
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which are likely to contain sensitive data
+# Keep terraform.tfvars for examples, but ignore any with secrets
+*secret*.tfvars
+*prod*.tfvars
+
+# Ignore override files as they are usually used to override resources locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.override.tf
+*.override.tf.json
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# IDE files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Azure CLI
+.azure/
+
+# Kubernetes config
+kubeconfig
+kubeconfig_*
+
+# Local scripts and temporary files
+temp/
+tmp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+
+# Certificate files
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*/*/.terraform.*
+
+# Ignore Terraform plan files
+*.tfplan
+
+# Ignore logs from Terraform commands
+*.log
+
+# Ignore sensitive variable files
+*/*/*.tfvars
+*.tfvars.json
+
+# Ignore backups of Terraform files
+*.tf.backup
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+lessons/day27/infra/modules/compute/scripts/1.sh
+lessons/day27/infra/modules/compute/scripts/2.sh
+lessons/day27/infra/backend_key.pem
+lessons/day27/infra/frontend_key.pem
