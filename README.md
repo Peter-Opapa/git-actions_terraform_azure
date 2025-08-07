@@ -1,10 +1,10 @@
 # Azure Infrastructure Deployment Platform 🚀
 
-Enterprise-grade Azure infrastructure automation platform using Terraform and GitHub Actions. Deploy production-ready AKS clusters, Key Vaults, and supporting infrastructure with zero-configuration CI/CD workflows.
+My enterprise-grade Azure infrastructure automation platform using Terraform and GitHub Actions. Deploy production-ready AKS clusters, Key Vaults, and supporting infrastructure with zero-configuration CI/CD workflows.
 
 ## 🚀 Quick Start
 
-Get your Azure infrastructure running in minutes with automated GitHub Actions workflows.
+Get your Azure infrastructure running in minutes with my automated GitHub Actions workflows.
 
 ### 🎯 **Zero-Config Deployment**
 1. Clone this repository
@@ -82,7 +82,7 @@ graph TB
 
 ## 🛠️ Infrastructure Components
 
-This project deploys a complete Azure infrastructure including:
+My project deploys a complete Azure infrastructure including:
 
 ### 🔧 **Core Infrastructure**
 - **Resource Groups**: Organized environment separation
@@ -313,7 +313,7 @@ gh workflow run terraform-destroy.yml -f environment=production
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
+I welcome contributions! Please see the [Contributing Guide](./CONTRIBUTING.md) for details.
 
 ### Development Workflow
 1. Fork the repository
