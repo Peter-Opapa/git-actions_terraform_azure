@@ -32,14 +32,33 @@ Thank you for your interest in contributing to this project! This guide will hel
 ## 📁 Project Structure
 
 ```
-├── .github/workflows/          # CI/CD workflows
-├── scripts/                    # Setup and utility scripts
-├── lessons/day26/              # Main Terraform code
-│   ├── dev/                    # Development environment
-│   ├── staging/                # Staging environment
-│   └── modules/                # Reusable modules
-├── docs/                       # Documentation
-└── README.md
+├── 📁 .github/workflows/       # 🤖 GitHub Actions CI/CD workflows
+│   ├── terraform-deploy.yml     # 🚀 Main deployment workflow
+│   └── terraform-destroy.yml   # 💥 Infrastructure destruction workflow
+├── 📁 .vscode/                # 🛠️ VS Code workspace configuration
+├── 📁 docs/                    # 📚 Documentation and diagrams
+│   ├── architecture.png        # 🏛️ Infrastructure architecture
+│   └── infrastructure.md       # 📋 Infrastructure details
+├── 📁 infrastructure/          # 🏗️ Main Terraform infrastructure code
+│   ├── 📁 environments/        # 🌍 Environment-specific configurations
+│   │   ├── 📁 development/     # 🧪 Development environment
+│   │   ├── 📁 staging/         # 🔄 Staging environment
+│   │   └── 📁 production/      # 🏭 Production environment
+│   ├── 📁 modules/             # 🧩 Reusable Terraform modules
+│   │   ├── 📁 aks/             # ☸️ Kubernetes cluster module
+│   │   ├── 📁 keyvault/        # 🔐 Secret management module
+│   │   └── 📁 ServicePrincipal/# 🔑 Authentication module
+│   ├── 📁 shared/              # 🤝 Shared configurations
+│   └── 📄 README.md            # 📖 Infrastructure documentation
+├── 📁 legacy/                  # 📜 Legacy Azure DevOps pipelines
+├── 📁 scripts/                 # 📜 Setup and utility scripts
+│   ├── setup-azure-sp.sh       # 🔧 Service Principal setup (Bash)
+│   └── setup-azure-sp.ps1      # 🔧 Service Principal setup (PowerShell)
+├── 📄 GITHUB_ACTIONS_SETUP.md  # 📖 Complete setup guide
+├── 📄 CONTRIBUTING.md          # 🤝 Contribution guidelines
+├── 📄 SECURITY.md              # 🔒 Security policy
+├── 📄 CHANGELOG.md             # 📋 Version history
+└── 📄 README.md                # 📄 This file
 ```
 
 ## 🔄 Development Workflow
