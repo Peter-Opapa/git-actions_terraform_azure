@@ -39,22 +39,33 @@ az ad sp create-for-rbac \
 
 Go to your GitHub repository → Settings → Secrets and variables → Actions, and add these secrets:
 
-### Required Secrets:
+### Required Secrets (Individual secrets for Azure login v2):
 
-1. **AZURE_CREDENTIALS** - The complete JSON output from the Service Principal creation
-   ```json
-   {
-     "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-     "clientSecret": "your-client-secret",
-     "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-     "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-   }
-   ```
+1. **AZURE_CLIENT_ID** - The Application (client) ID from your Service Principal
+2. **AZURE_CLIENT_SECRET** - The client secret value from your Service Principal  
+3. **AZURE_TENANT_ID** - Your Azure AD tenant ID
+4. **AZURE_SUBSCRIPTION_ID** - Your Azure subscription ID
+5. **AZURE_BACKEND_STORAGE_ACCOUNT** - Your Terraform backend storage account name (e.g., "tfdevbackend2025peter")
 
-2. **AZURE_CLIENT_ID** - The clientId from the JSON above
-3. **AZURE_CLIENT_SECRET** - The clientSecret from the JSON above  
-4. **AZURE_TENANT_ID** - The tenantId from the JSON above
-5. **AZURE_SUBSCRIPTION_ID** - The subscriptionId from the JSON above
+### How to get these values:
+
+When you create the Service Principal with the script or Azure CLI, you'll get output like this:
+```json
+{
+  "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "clientSecret": "your-client-secret",
+  "subscriptionId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
+  "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+
+Map these values to the GitHub secrets:
+- `clientId` → `AZURE_CLIENT_ID`
+- `clientSecret` → `AZURE_CLIENT_SECRET` 
+- `tenantId` → `AZURE_TENANT_ID`
+- `subscriptionId` → `AZURE_SUBSCRIPTION_ID`
+
+The `AZURE_BACKEND_STORAGE_ACCOUNT` should be the name of your Terraform backend storage account.
 
 ## Step 3: Configure GitHub Environments
 
