@@ -1,10 +1,12 @@
 # Azure Infrastructure Deployment Platform 🚀
 
-My enterprise-grade Azure infrastructure automation platform using Terraform and GitHub Actions. Deploy production-ready AKS clusters, Key Vaults, and supporting infrastructure with zero-configuration CI/CD workflows.
+This project automates the deployment and management of Azure Kubernetes Service (AKS) infrastructure using Terraform, with CI/CD pipelines powered primarily by GitHub Actions and optionally by Azure DevOps. The infrastructure is defined using modular Terraform code and supports multiple environments such as Dev and Stage, each maintaining its own Terraform state file stored securely in Azure Storage. Upon code commits to Git, GitHub Actions are triggered to run Terraform commands (init, plan, and apply) to provision or update resources. Authentication to Azure is handled through a Service Principal registered in Microsoft Entra ID, which is granted the Contributor role at the subscription level, ensuring secure access to create and manage resources. A Resource Group is provisioned to contain AKS clusters and Azure Key Vaults, with the AKS cluster managing secure interactions with the vault. Destructive actions like terraform destroy are restricted from DevOps users to prevent accidental deletions. While GitHub Actions is the primary automation tool, Azure DevOps is also integrated as an alternative pipeline option for infrastructure deployment.
+
+![Project Architecture](docs/architecture.png)
 
 ## 🚀 Quick Start
 
-Get your Azure infrastructure running in minutes with my automated GitHub Actions workflows.
+Get your Azure infrastructure running in minutes with this automated GitHub Actions workflows.
 
 ### 🎯 **Zero-Config Deployment**
 1. Clone this repository
@@ -12,7 +14,7 @@ Get your Azure infrastructure running in minutes with my automated GitHub Action
 3. Add Azure secrets to GitHub (5 secrets)
 4. Push to main branch → Auto-deploy to development! 🚀
 
-**[📖 Complete Setup Guide](./GITHUB_ACTIONS_SETUP.md)** | **[🤝 Contributing](./CONTRIBUTING.md)** | **[📋 Changelog](./CHANGELOG.md)**
+**[📖 Complete Setup Guide](./GITHUB_ACTIONS_SETUP.md)** | **[🤝 Contributing](./CONTRIBUTING.md)**
 
 ### ✨ Key Features:
 - ✅ **Production-ready** AKS clusters with best practices
@@ -52,9 +54,9 @@ graph TB
 
 ```
 ├── 📁 .github/workflows/       # 🤖 GitHub Actions CI/CD workflows
-│   ├── terraform-deploy.yml    # 🚀 Main deployment workflow
+│   ├── terraform-deploy.yml     # 🚀 Main deployment workflow
 │   └── terraform-destroy.yml   # 💥 Infrastructure destruction workflow
-├── 📁 .vscode/                 # 🛠️ VS Code workspace configuration
+├── 📁 .vscode/                # 🛠️ VS Code workspace configuration
 ├── 📁 docs/                    # 📚 Documentation and diagrams
 │   ├── architecture.png        # 🏛️ Infrastructure architecture
 │   └── infrastructure.md       # 📋 Infrastructure details
@@ -64,17 +66,17 @@ graph TB
 │   │   ├── 📁 staging/         # 🔄 Staging environment
 │   │   └── 📁 production/      # 🏭 Production environment
 │   ├── 📁 modules/             # 🧩 Reusable Terraform modules
-│   │   ├── 📁 aks/            # ☸️ Kubernetes cluster module
-│   │   ├── 📁 keyvault/       # 🔐 Secret management module
-│   │   └── 📁 ServicePrincipal/ # 🔑 Authentication module
+│   │   ├── 📁 aks/             # ☸️ Kubernetes cluster module
+│   │   ├── 📁 keyvault/        # 🔐 Secret management module
+│   │   └── 📁 ServicePrincipal/# 🔑 Authentication module
 │   ├── 📁 shared/              # 🤝 Shared configurations
 │   └── 📄 README.md            # 📖 Infrastructure documentation
 ├── 📁 legacy/                  # 📜 Legacy Azure DevOps pipelines
 ├── 📁 scripts/                 # 📜 Setup and utility scripts
-│   ├── setup-azure-sp.sh      # 🔧 Service Principal setup (Bash)
-│   └── setup-azure-sp.ps1     # 🔧 Service Principal setup (PowerShell)
+│   ├── setup-azure-sp.sh       # 🔧 Service Principal setup (Bash)
+│   └── setup-azure-sp.ps1      # 🔧 Service Principal setup (PowerShell)
 ├── 📄 GITHUB_ACTIONS_SETUP.md  # 📖 Complete setup guide
-├── 📄 CONTRIBUTING.md           # 🤝 Contribution guidelines
+├── 📄 CONTRIBUTING.md          # 🤝 Contribution guidelines
 ├── 📄 SECURITY.md              # 🔒 Security policy
 ├── 📄 CHANGELOG.md             # 📋 Version history
 └── 📄 README.md                # 📄 This file
@@ -335,7 +337,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-Built with ❤️ for the DevOps community. This platform demonstrates enterprise-grade infrastructure automation best practices.
+Built with ❤️ by Peter for the DevOps community. This platform demonstrates enterprise-grade infrastructure automation best practices.
 
 ---
 
