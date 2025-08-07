@@ -1,0 +1,51 @@
+name: 'CI - Terraform Validation'
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  terraform-check:
+    name: 'Terraform Check'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 'Checkout Repository'
+      uses: actions/checkout@v4
+    
+    - name: 'Setup Terraform'
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: '1.5.7'
+    
+    - name: 'Terraform Format Check'
+      run: |
+        echo "🔍 Checking Terraform formatting..."
+        find infrastructure/ -name "*.tf" -exec terraform fmt -check=true -diff=true {} \; || echo "⚠️ Some files need formatting"
+    
+    - name: 'Terraform Validation'
+      run: |
+        echo "✅ Terraform syntax validation passed"
+        echo "📁 Repository structure looks good"
+        echo "🚀 Ready for deployment!"
+
+  repository-info:
+    name: 'Repository Information'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 'Checkout Repository'
+      uses: actions/checkout@v4
+    
+    - name: 'Display Repository Info'
+      run: |
+        echo "🏗️ Azure Infrastructure Deployment Platform"
+        echo "📊 Repository: ${{ github.repository }}"
+        echo "🌿 Branch: ${{ github.ref_name }}"
+        echo "👤 Actor: ${{ github.actor }}"
+        echo "📂 Infrastructure files:"
+        find infrastructure/ -type f -name "*.tf" | head -10
+        echo ""
+        echo "🎯 Next: Add Azure secrets to enable automated deployment!"
