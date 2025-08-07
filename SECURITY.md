@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We support the following versions of this project with security updates:
+I support the following versions of this project with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -11,12 +11,12 @@ We support the following versions of this project with security updates:
 
 ## Reporting a Vulnerability
 
-We take security vulnerabilities seriously. If you discover a security vulnerability, please follow these steps:
+I take security vulnerabilities seriously. If you discover a security vulnerability, please follow these steps:
 
 ### 🔒 Private Reporting
 
 1. **DO NOT** create a public GitHub issue for security vulnerabilities
-2. **DO** email us privately at: [security@yourdomain.com] (replace with actual email)
+2. **DO** email privately at: [opapapeter82@gmail.com]
 3. **Include** the following information:
    - Description of the vulnerability
    - Steps to reproduce
@@ -81,8 +81,8 @@ When using this project:
 
 ### 🏆 Acknowledgments
 
-We appreciate responsible disclosure and will acknowledge security researchers who help improve our security posture.
+I appreciate responsible disclosure and will acknowledge security researchers who help improve our security posture.
 
 ---
 
-**Thank you for helping keep our project secure!** 🔒
+**Thank you for helping keep this project secure!** 🔒
