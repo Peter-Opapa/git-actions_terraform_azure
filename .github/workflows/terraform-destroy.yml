@@ -50,7 +50,7 @@ jobs:
         cd infrastructure/environments/${{ github.event.inputs.environment }}
         terraform init \
           -backend-config="resource_group_name=terraform-state-rg" \
-          -backend-config="storage_account_name=${{ secrets.AZURE_BACKEND_STORAGE_ACCOUNT }}" \
+          -backend-config="storage_account_name=tfstagebackend2025peter" \
           -backend-config="container_name=tfstate" \
           -backend-config="key=${{ github.event.inputs.environment }}.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
@@ -98,7 +98,7 @@ jobs:
         cd infrastructure/environments/${{ github.event.inputs.environment }}
         terraform init \
           -backend-config="resource_group_name=terraform-state-rg" \
-          -backend-config="storage_account_name=${{ secrets.AZURE_BACKEND_STORAGE_ACCOUNT }}" \
+          -backend-config="storage_account_name=tfstagebackend2025peter" \
           -backend-config="container_name=tfstate" \
           -backend-config="key=${{ github.event.inputs.environment }}.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
