@@ -64,7 +64,9 @@ jobs:
           -backend-config="container_name=tfstate" \
           -backend-config="key=development.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
-          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
+          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
+          -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" \
+          -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
     
     - name: 'Terraform Validate'
       run: |
@@ -111,7 +113,9 @@ jobs:
           -backend-config="container_name=tfstate" \
           -backend-config="key=development.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
-          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
+          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
+          -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" \
+          -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
     
     - name: 'Terraform Plan'
       run: |
@@ -159,7 +163,9 @@ jobs:
           -backend-config="container_name=tfstate" \
           -backend-config="key=development.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
-          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
+          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
+          -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" \
+          -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
     
     - name: 'Terraform Apply'
       run: |
@@ -201,7 +207,9 @@ jobs:
           -backend-config="container_name=tfstate" \
           -backend-config="key=staging.tfstate" \
           -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
-          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
+          -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
+          -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" \
+          -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}"
     
     - name: 'Terraform Apply'
       run: |
